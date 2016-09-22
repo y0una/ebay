@@ -1,0 +1,12 @@
+<h2><%= @user.user_name %>'s Profile</h2>
+<h3>Your Auctions</h3>
+
+  <form method="get" action="/auctions/new">
+    <button type="submit">Add an Auction</button>
+  </form>
+
+  <% @auctions.each do |auction| %>
+    <ul>
+      <a href="/auctions/<%= auction.id %>" ><li> <%= auction.item_name %> </li> </a>
+    </ul>
+  <% end %>

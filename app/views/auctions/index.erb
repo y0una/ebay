@@ -1,0 +1,4 @@
+<h1>All Auctions</h1>
+<%@auctions.each do |auction| %>
+  <li><a href="<%="/auctions/#{auction.id}" %>"><%=auction.item_name%></a></li>
+<% end %>

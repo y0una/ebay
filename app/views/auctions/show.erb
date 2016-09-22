@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%=@auction.item_name%></h1>
+
+  <form method="get" action="/auctions/<%=@auction.id%>/edit">
+    <button type="submit">Edit</button>
+  </form><br>
+
+  <div>Item Name: <%=@auction.item_name%></div>
+  <div>Condition: <%=@auction.condition%></div>
+  <div>Starts: <%=@auction.starts%></div>
+  <div>Ends: <%=@auction.ends%></div>
+  <div>Description: <%=@auction.description%></div>
+
+  <form method="post" action="/auctions/<%=@auction.id%>">
+    <input name="_method" type="hidden" value="delete" />
+    <input type="submit" value="Delete">
+  </form>
+</div>

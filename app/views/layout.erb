@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+<div id="nav-bar">
+  <%unless current_user %>
+    <a class="top-bar" class="login-register" href = '/sessions/new'>Login</a>
+    <a class="top-bar" class="login-register" href = '/users/new'>Register</a>
+  <%else%>
+
+  <a class="top-bar" id="user-name" href="/users/<%=current_user.id%>"> <%=current_user.user_name%> </a>
+
+    <form class="top-bar" method="post" action="/logout">
+      <input type = "hidden" name="_method" value="delete">
+      <input id="logout" type="submit" value="Logout">
+    </form>
+
+<!--   <a class="logged-in" id="logout-link" href=""> Logout </a>  <!-- calling method from helper -->
+
+  <%end%>
+</div>
+</form>
+  <%= yield %>
+</body>
+</html>
