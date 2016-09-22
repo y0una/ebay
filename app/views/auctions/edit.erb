@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Edit <%=@auction.item_name%></h1>
+
+  <form method="post" action="/auctions/<%=@auction.id%>">
+    Item Name:
+    <input type="text" name="auction[item_name]" value="<%=@auction.item_name%>"><br>
+
+    Condition:
+    <select name="condition">
+      <option value="new">New</option>
+      <option value="good">Good</option>
+      <option value="fair">Fair</option>
+      <option value="poor">Poor</option>
+    </select><br>
+
+    Starts:
+    <input type="text" name="auction[starts]" value="<%=@auction.starts%>"><br>
+
+    Ends:
+    <input type="text" name="auction[ends]" value="<%=@auction.ends%>"><br>
+
+    Description:
+    <input type="text" name="auction[description]" value="<%=@auction.description%>"><br>
+
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="Update" class="button">
+  </form>
+</div>

@@ -1,0 +1,31 @@
+#nav-bar{
+  display:block;
+  /*border: 2px solid blue;*/
+  height: 50px;
+}
+
+.top-bar{
+  padding-top: 10px;
+  padding-right: 10px;
+  float: right;
+}
+
+#logout{
+  font-family: "Verdana" sans-serif;
+  font-size: 1em;
+  text-align: left;
+  color: blue;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#user-name{
+  text-decoration: none;
+}
+
+error{
+  color:pink;
+}
